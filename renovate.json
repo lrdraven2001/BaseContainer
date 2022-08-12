@@ -1,0 +1,31 @@
+{
+  "assignees": ["@cadehuismann"],
+  "baseBranches": ["development"],
+  "automerge": true,
+  "gitLabAutomerge": true,
+  "packageRules": [
+    {
+      "datasources": ["docker"],
+      "packageNames": ["tomcat"],
+      "separateMinorPatch": true,
+      "major": {
+        "enabled": false
+      },
+      "minor": {
+        "enabled": true
+      }
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^hardening_manifest.yaml$"],
+      "matchStrings": [
+        "org\\.opencontainers\\.image\\.version:\\s+(\\s|\"|')?(?<currentValue>.+?)(\\s|\"|'|$)",
+        "tags:\\s+-(\\s|\"|')+(?<currentValue>.+?)(\\s|\"|'|$)+"
+      ],
+      "depNameTemplate": "tomcat",
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
+

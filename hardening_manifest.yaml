@@ -1,0 +1,36 @@
+apiVersion: v1
+
+name: opensource/apache/tomcat9-openjdk11
+
+tags:
+- 9.0.65
+- latest
+
+args:
+  BASE_IMAGE: redhat/openjdk/openjdk11
+  BASE_TAG: '1.11'
+
+labels:
+  org.opencontainers.image.title: tomcat9-openjdk11
+  org.opencontainers.image.description: Apache Tomcat is an open source implementation
+    of the Java Servlet and JavaServer Pages technologies
+  org.opencontainers.image.licenses: Apache-2.0
+  org.opencontainers.image.url: https://tomcat.apache.org/
+  org.opencontainers.image.vendor: opensource
+  org.opencontainers.image.version: 9.0.65
+  mil.dso.ironbank.image.keywords: Apache,Tomcat9,tomcat,JDK,server
+  mil.dso.ironbank.image.type: opensource
+  mil.dso.ironbank.product.name: Apache
+
+resources:
+- url: docker://docker.io/tomcat@sha256:171affbd3c2ab043eb98700f06ef63c4531c65063846891f49d924b08c523972
+  tag: tomcat:9.0.65-jdk11-openjdk
+
+maintainers:
+- email: ironbank@dsop.io
+  username: mdfreeman90
+  name: Michael Freeman
+  cht_member: true
+- name: Cade Husimann
+  username: cadehuismann
+  cht_member: true
